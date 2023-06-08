@@ -1,8 +1,8 @@
 import user from './Profile/user.json';
 import Profile from './Profile/Profile'; // Import komponentu Profile
 
-// import data from './Statistics/data.json';
-// import Statistics from './Statistics/Statistics'; // Import komponentu Statistics
+import data from './Statistics/data.json';
+import Statistics from './Statistics/Statistics'; // Import komponentu Statistics
 
 // import friends from './FriendList/friends.json';
 // import FriendList from './FriendList/FriendList'; // Import komponentu FriendList
@@ -17,6 +17,7 @@ export const App = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
         fontSize: 40,
         color: '#010101',
@@ -29,8 +30,8 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      {/* <Statistics stats={data} />
-      <FriendList friends={friends} />;
+      <Statistics stats={data} />
+      {/* <FriendList friends={friends} />;
       <TransactionHistory items={transactions} /> */}
     </div>
   );
