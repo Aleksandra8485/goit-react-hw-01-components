@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
 import styles from './FriendList.module.css';
 
-const FriendListItem = ({ avatar, name, isOnline }) => {
-  const statusClass = isOnline ? 'status--online' : 'status--offline';
-
+function FriendListItem({ isOnline, avatar, name }) {
   return (
-    <li className="item">
-      <span className={`status ${statusClass}`}></span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
+    <li className={`${styles.item} ${styles.friendItem}`}>
+      <span
+        className={`${styles.status} ${
+          isOnline ? styles.online : styles.offline
+        }`}
+      />
+      <img src={avatar} alt="User avatar" width="48" />
+      <p className={styles.name}>{name}</p>
     </li>
   );
-};
+}
 
 FriendListItem.propTypes = {
   avatar: PropTypes.string.isRequired,
@@ -21,7 +23,7 @@ FriendListItem.propTypes = {
 
 const FriendList = ({ friends }) => {
   return (
-    <ul className="friend-list">
+    <ul className={styles.friendList}>
       {friends.map(friend => (
         <FriendListItem
           key={friend.id}
