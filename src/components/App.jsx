@@ -7,19 +7,19 @@ import Statistics from './Statistics/Statistics'; // Import komponentu Statistic
 import friends from './FriendList/friends.json';
 import FriendList from './FriendList/FriendsList'; // Import komponentu FriendList
 
-// import transactions from './TransactionHistory/transactions.json';
-// import TransactionHistory from './TransactionHistory/TransactionHistory'; // Import komponentu TransactionHistory
+import transactions from './TransactionHistory/transactions.json';
+import TransactionHistory from './TransactionHistory/TransactionHistory'; // Import komponentu TransactionHistory
 
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        fontSize: 40,
+        fontSize: 20,
         color: '#010101',
       }}
     >
@@ -31,8 +31,8 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics stats={data} />
-      <FriendList friends={friends} />;
-      {/* <TransactionHistory items={transactions} /> */}
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
